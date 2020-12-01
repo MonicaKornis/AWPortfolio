@@ -124,3 +124,8 @@ span.material-icons {
   flex-wrap: wrap;
   flex-basis: 3;
 }
+
+.object-image {
+  max-width: 100px;
+  margin: 10px;
+}
