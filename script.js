@@ -4,18 +4,15 @@ let images = [];
 fetch('https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages=true&q=book')
 .then(res => res.json())
 .then(json => {
-  for (var i = 0; i < 10; i++) {
+  for (var i = 0; i < 20; i++) {
     let num = Math.ceil(Math.random() * 1000);
     fetch(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${num}`)
     .then(res => res.json())
     .then(json => {
-      if(json.primaryImage === '' || json.primaryImage === undefined){
-        if(json.primaryImageSmall !== '' || undefined ){
+      if(json.primaryImageSmall !== '' || json.primaryImageSmall === undefined){
           images.push(json.primaryImageSmall)
-        }
-      } else {
-        images.push(json.primaryImage)
       }
+
       console.log(images)
     }).then(addImageElements);
   }
@@ -37,6 +34,7 @@ function addImageElements() {
     imageContainer.className = 'image-container';
     image.className = 'object-image';
     image.src = img;
+    image.loading = 'lazy';
     parent.appendChild(imageContainer);
     imageContainer.appendChild(image);
   })

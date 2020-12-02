@@ -123,6 +123,7 @@ span.material-icons {
   display: flex;
   flex-wrap: wrap;
   flex-basis: 3;
+  justify-content: center;
 }
 
 .object-image {
