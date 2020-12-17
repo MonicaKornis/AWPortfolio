@@ -12,23 +12,47 @@ fetch('https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages
       if(json.primaryImageSmall !== '' || json.primaryImageSmall === undefined){
           images.push(json.primaryImageSmall)
       }
-
-      console.log(images)
     }).then(addImageElements);
   }
 });
 
+function addToggle() {
+  let modeToggleButton = document.getElementById('mode-toggle');
 
+  modeToggleButton.addEventListener('click', () => {
+    console.log('hi');
+    if(modeToggleButton.innerHTML == 'Dark Mode: Off') {
+      let body = document.querySelector('body');
+      let nav = document.getElementById('top-nav');
+      let menu = document.getElementById('side-menu');
+      let button = document.getElementById('bub-studio');
+      nav.style.borderColor = '#95ACFF';
+      menu.style.borderColor = '#95ACFF';
+      body.style.backgroundColor = 'black';
+      body.style.color = '#95ACFF';
+      button.style.borderColor = '#95ACFF';
+      modeToggleButton.innerHTML = 'Dark Mode: On';
+    } else {
+      let body = document.querySelector('body');
+      let nav = document.getElementById('top-nav');
+      let menu = document.getElementById('side-menu');
+      let button = document.getElementById('bub-studio');
+      nav.style.borderColor = '#db0000';
+      menu.style.borderColor = '#db0000';
+      body.style.backgroundColor = 'white';
+      body.style.color = '#db0000';
+      button.style.borderColor = '#db0000';
+      modeToggleButton.innerHTML = 'Dark Mode: Off';
+    }
+
+  });
+}
 
 
 function addImageElements() {
   let parent = document.getElementById('flex-container');
-  console.log(parent)
-  console.log(images)
 
-  // console.log(id)
   images.forEach(img => {
-    console.log(img);
     let imageContainer = document.createElement('div');
     let image = document.createElement('img');
     imageContainer.className = 'image-container';
@@ -41,4 +65,4 @@ function addImageElements() {
 }
 
 
-// window.addEventListener("DOMContentLoaded", addImageElements);
+document.addEventListener('DOMContentLoaded', addToggle, false);

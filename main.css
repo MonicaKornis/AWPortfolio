@@ -33,24 +33,29 @@ body {
   height: 36px;
   position: static;
 	display: flex;
+	z-index: 1;
 }
 
-.menu-button {
-  width: 100px;
-  height: 36px;
-  border-right: 1px solid #db0000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
-}
-
-.feed-button {
+.button {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 100px;
 	font-weight: bold;
+}
+
+.button:hover {
+	color: #18a0fb;
+	text-decoration: underline;
+}
+
+.menu {
+  width: 100px;
+  height: 36px;
+  border-right: 1px solid #db0000;
+}
+
+.feed {
+	padding: 0px 20px 0px 20px;
 }
 
 .menu-icon {
@@ -86,6 +91,7 @@ body {
   align-items: center;
   height: 100px;
 }
+
 .nav-inner-section {
   width: 90%;
   border-bottom: 1px solid red;
@@ -95,25 +101,11 @@ body {
   align-items: center;
 }
 
-.top-nav {
-  display: flex;
-  width: 90%;
+.works {
+	height: 100vh;
+	width: 100px;
+	border-right: 1px solid #db0000; 
 }
-
-.nav-info {
-  width: 90%;
-  display: flex;
-  flex-direction: column;
-}
-
-.nav-info-top{
-  height: 45%;
-}
-
-.nav-bottom {
-  margin-top: 6px;
-}
-
 
 .nav-info-top *, .nav-bottom * {
   margin-right: 11px;
