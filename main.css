@@ -104,7 +104,12 @@ body {
 .works {
 	height: 100vh;
 	width: 100px;
-	border-right: 1px solid #db0000; 
+	border-right: 1px solid #db0000;
+	display: inline;
+}
+
+.page-body {
+	display: inline-flex;
 }
 
 .nav-info-top *, .nav-bottom * {
@@ -125,6 +130,7 @@ span.material-icons {
   flex-wrap: wrap;
   grid-template-columns: 33%;
   justify-content: center;
+	width: 80%;
 }
 
 .object-image {
