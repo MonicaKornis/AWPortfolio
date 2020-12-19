@@ -54,7 +54,7 @@ function addImageElements() {
 
   images.forEach(img => {
     let imageContainer = document.createElement('div');
-    let image = document.createElement('img');
+    let image1 = document.createElement('img');
     imageContainer.className = 'image-container';
     image.className = 'object-image';
     image.src = img;
