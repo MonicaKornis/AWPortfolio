@@ -44,7 +44,7 @@ body {
 }
 
 .button:hover {
-	color: #18a0fb;
+	color: #27A2F8;
 	text-decoration: underline;
 }
 
@@ -55,7 +55,7 @@ body {
 }
 
 .feed {
-	padding: 0px 20px 0px 20px;
+	display: none;
 }
 
 .menu-icon {
@@ -136,4 +136,11 @@ span.material-icons {
 .object-image {
   max-width: 100px;
   margin: 10px;
+}
+
+@media (min-width: 550px) {
+	.feed {
+		display: flex;
+		padding: 0px 20px 0px 20px;
+	}
 }

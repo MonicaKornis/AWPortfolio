@@ -4,7 +4,7 @@ let images = [];
 fetch('https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages=true&q=book')
 .then(res => res.json())
 .then(json => {
-  for (var i = 0; i < 4; i++) {
+  for (var i = 0; i < 1; i++) {
     let num = Math.ceil(Math.random() * 1000);
     fetch(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${num}`)
     .then(res => res.json())
