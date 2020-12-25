@@ -26,41 +26,34 @@ function addToggle() {
       let nav = document.getElementById('top-nav');
       let menu = document.getElementById('side-menu');
       let button = document.getElementById('bub-studio');
-      nav.style.borderColor = '#95ACFF';
-      menu.style.borderColor = '#95ACFF';
       body.style.backgroundColor = 'black';
       body.style.color = '#95ACFF';
-      button.style.borderColor = '#95ACFF';
       modeToggleButton.innerHTML = 'Dark Mode: On';
     } else {
       let body = document.querySelector('body');
       let nav = document.getElementById('top-nav');
       let menu = document.getElementById('side-menu');
       let button = document.getElementById('bub-studio');
-      nav.style.borderColor = '#db0000';
-      menu.style.borderColor = '#db0000';
-      body.style.backgroundColor = 'white';
+      body.style.backgroundColor = '#FFFCF0';
       body.style.color = '#db0000';
-      button.style.borderColor = '#db0000';
       modeToggleButton.innerHTML = 'Dark Mode: Off';
     }
-
   });
 }
 
 
 function addImageElements() {
   let parent = document.getElementById('flex-container');
-
+  console.log('hi')
   images.forEach(img => {
     let imageContainer = document.createElement('div');
     let image1 = document.createElement('img');
     imageContainer.className = 'image-container';
-    image.className = 'object-image';
-    image.src = img;
-    image.loading = 'lazy';
+    image1.className = 'object-image';
+    image1.src = img;
+    image1.loading = 'lazy';
     parent.appendChild(imageContainer);
-    imageContainer.appendChild(image);
+    imageContainer.appendChild(image1);
   })
 }
 
