@@ -138,6 +138,7 @@ Nav Bar Styles  */
 	padding: 20px;
 	display: flex;
 	justify-content: center;
+	flex-direction: column;
 }
 
 .flex-container {
@@ -147,6 +148,11 @@ Nav Bar Styles  */
 .object-image {
   max-width: 100px;
   margin: 10px;
+}
+
+.bio-image {
+	max-width: 200px;
+	margin: 20px auto;
 }
 
 @media (min-width: 590px) {
@@ -184,7 +190,8 @@ Nav Bar Styles  */
 	}
 
 	.flex-container {
-		width: 60%;
+		width: 53%;
+		display: flex;
 	}
 
 	.info-container {

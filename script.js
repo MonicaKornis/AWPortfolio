@@ -1,15 +1,15 @@
 let objectIds = [];
 let images = [];
 
-fetch('https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages=true&q=book')
+fetch('https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages=true&q=red')
 .then(res => res.json())
 .then(json => {
-  for (var i = 0; i < 1; i++) {
-    let num = Math.ceil(Math.random() * 1000);
+  for (var i = 0; i < 3; i++) {
+    let num = Math.ceil(Math.random() * 10000);
     fetch(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${num}`)
     .then(res => res.json())
     .then(json => {
-      if(json.primaryImageSmall !== '' || json.primaryImageSmall === undefined){
+      if(json.primaryImageSmall !== '' || json.primaryImageSmall !== undefined || json.primaryImageSmall !== unknown){
           images.push(json.primaryImageSmall)
       }
     }).then(addImageElements);
@@ -23,17 +23,11 @@ function addToggle() {
     console.log('hi');
     if(modeToggleButton.innerHTML == 'Dark Mode: Off') {
       let body = document.querySelector('body');
-      let nav = document.getElementById('top-nav');
-      let menu = document.getElementById('side-menu');
-      let button = document.getElementById('bub-studio');
       body.style.backgroundColor = 'black';
       body.style.color = '#95ACFF';
       modeToggleButton.innerHTML = 'Dark Mode: On';
     } else {
       let body = document.querySelector('body');
-      let nav = document.getElementById('top-nav');
-      let menu = document.getElementById('side-menu');
-      let button = document.getElementById('bub-studio');
       body.style.backgroundColor = '#FFFCF0';
       body.style.color = '#db0000';
       modeToggleButton.innerHTML = 'Dark Mode: Off';
@@ -44,7 +38,15 @@ function addToggle() {
 
 function addImageElements() {
   let parent = document.getElementById('flex-container');
-  console.log('hi')
+  let sideBarImg = document.getElementById('bio-image');
+  let imageSidebarSrc = images.pop();
+  sideBarImg.src = imageSidebarSrc;
+  // let imageContainerSide = document.createElement('div');
+  // let imageSide = document.createElement('img');
+  // imageSide.src = imageSidebarSrc;
+  // imageContainerSide.appendChild(imageSide);
+  // sideBar.appendChild(imageContainerSide);
+
   images.forEach(img => {
     let imageContainer = document.createElement('div');
     let image1 = document.createElement('img');
@@ -54,6 +56,7 @@ function addImageElements() {
     image1.loading = 'lazy';
     parent.appendChild(imageContainer);
     imageContainer.appendChild(image1);
+    debugger
   })
 }
 
