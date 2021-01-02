@@ -41,11 +41,6 @@ function addImageElements() {
   let sideBarImg = document.getElementById('bio-image');
   let imageSidebarSrc = images.pop();
   sideBarImg.src = imageSidebarSrc;
-  // let imageContainerSide = document.createElement('div');
-  // let imageSide = document.createElement('img');
-  // imageSide.src = imageSidebarSrc;
-  // imageContainerSide.appendChild(imageSide);
-  // sideBar.appendChild(imageContainerSide);
 
   images.forEach(img => {
     let imageContainer = document.createElement('div');
