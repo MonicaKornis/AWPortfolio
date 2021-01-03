@@ -61,7 +61,6 @@ Nav Bar Styles  */
 	width: 20px;
 	margin-left: 15px;
 	margin-top: 12px;
-	content: '\9776';
 }
 
 .open.hamburger {
@@ -88,15 +87,15 @@ Nav Bar Styles  */
 	margin-top: 9px;
 	content: '';
 	position: absolute;
-}
+} */
 
 .hamburger::before {
 	border-top: 1px solid currentColor;
 	width: 20px;
 	margin-top: 4px;
-	content: ' ';
+	content: '\2630';
 	position: absolute;
-} */
+}
 
 .feed {
 	display: none;
