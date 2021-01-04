@@ -20,7 +20,6 @@ function addToggle() {
   let modeToggleButton = document.getElementById('mode-toggle');
 
   modeToggleButton.addEventListener('click', () => {
-    console.log('hi');
     if(modeToggleButton.innerHTML == 'Dark Mode: Off') {
       let body = document.querySelector('body');
       body.style.backgroundColor = 'black';
@@ -51,9 +50,24 @@ function addImageElements() {
     image1.loading = 'lazy';
     parent.appendChild(imageContainer);
     imageContainer.appendChild(image1);
-    debugger
   })
+}
+
+function addOpenClass() {
+  let icon = document.getElementById('hamburger');
+  let sideMenu = document.getElementById('piece-title');
+
+  icon.addEventListener('click', () => {
+    if(icon.classList.contains('open')) {
+      icon.classList.remove('open');
+      sideMenu.classList.remove('open');
+    } else {
+      icon.classList.add('open');
+      sideMenu.classList.add('open');
+    }
+  });
 }
 
 
 document.addEventListener('DOMContentLoaded', addToggle, false);
+document.addEventListener('DOMContentLoaded', addOpenClass, false);

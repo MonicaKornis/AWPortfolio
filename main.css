@@ -57,7 +57,7 @@ Nav Bar Styles  */
 }
 
 .hamburger {
-	/* border-top: 1px solid currentColor; */
+	border-top: 1px solid currentColor;
 	width: 20px;
 	margin-left: 15px;
 	margin-top: 12px;
@@ -73,31 +73,33 @@ Nav Bar Styles  */
 
 .open.hamburger:before {
 	border: none;
-	/* transform: rotate(90deg); */
-	/* left:-2px;
-	margin: 0px;
-	padding: 0px; */
 	content: 'X';
+	position: absolute;
+	margin-top: -4px;
 }
 
 
-/* .hamburger::after {
+.hamburger::after {
 	border-top: 1px solid currentColor;
 	width: 20px;
 	margin-top: 9px;
 	content: '';
 	position: absolute;
-} */
+}
 
 .hamburger::before {
 	border-top: 1px solid currentColor;
 	width: 20px;
 	margin-top: 4px;
-	content: '\2630';
+	content: ' ';
 	position: absolute;
 }
 
 .feed {
+	display: none;
+}
+
+.piece-title {
 	display: none;
 }
 
@@ -209,6 +211,12 @@ Nav Bar Styles  */
 	.flex-container {
 		width: 53%;
 		display: flex;
+	}
+
+	.piece-title {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
 	}
 
 	.info-container {
